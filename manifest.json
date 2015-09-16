@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "fd-extended",
+	"version": "1.0",
+	"description": "풋볼데이에 편의기능을 제공하는 Chrome 확장 프로그램입니다.",
+	"icons": {
+		"128": "res/image/icon128.png",
+		"48": "res/image/icon48.png"
+	},
+	"author": "Junison",
+	"background": {
+		"scripts": [ "src/background.js" ],
+		"persistent": false
+	},
+	"content_scripts": [{
+		"matches": [ "*://fd.naver.com/gmc/*" ],
+		"js": ["src/include/jquery-2.1.4.min.js", "src/fd-extended.js"]
+	}],
+	"permissions": [
+		"tabs",
+		"http://fd.naver.com/gmc/*"
+	]
+}
